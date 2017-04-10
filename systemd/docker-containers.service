@@ -1,0 +1,14 @@
+[Unit]
+Description=Launch docker containers
+After=docker.service
+
+[Service]
+Type=oneshot
+User=john
+ExecStart=/usr/local/bin/setup-docker-containers.sh
+RemainAfterExit=true
+ExecStop=/usr/local/bin/teardown-docker-containers.sh
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
