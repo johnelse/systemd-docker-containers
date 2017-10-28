@@ -44,6 +44,6 @@ docker run -d --name transmission-container \
     -p 12345:12345/udp \
     -p 9091:9091 \
     -e ADMIN_PASS=$TRANSMISSION_PASSWORD \
-    -v $TRANSMISSION_DOWNLOADS/var/lib/transmission-daemon/downloads \
-    -v $TRANSMISSION_INCOMPLETE/var/lib/transmission-daemon/incomplete \
+    -v $TRANSMISSION_DOWNLOADS:/var/lib/transmission-daemon/downloads \
+    -v $TRANSMISSION_INCOMPLETE:/var/lib/transmission-daemon/incomplete \
     johnelse/docker-transmission
