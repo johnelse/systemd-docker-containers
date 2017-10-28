@@ -15,6 +15,8 @@ fi
 # Make directories.
 mkdir -p $LIGHTTPD_HOME
 mkdir -p $MINIDLNA_HOME
+mkdir -p $TRANSMISSION_RESUME
+mkdir -p $TRANSMISSION_TORRENTS
 mkdir -p $TRANSMISSION_DOWNLOADS
 mkdir -p $TRANSMISSION_INCOMPLETE
 
@@ -44,6 +46,8 @@ docker run -d --name transmission-container \
     -p 12345:12345/udp \
     -p 9091:9091 \
     -e ADMIN_PASS=$TRANSMISSION_PASSWORD \
+    -v $TRANSMISSION_RESUME:/etc/transmission-daemon/resume \
+    -v $TRANSMISSION_TORRENTS:/etc/transmission-daemon/torrents \
     -v $TRANSMISSION_DOWNLOADS:/var/lib/transmission-daemon/downloads \
     -v $TRANSMISSION_INCOMPLETE:/var/lib/transmission-daemon/incomplete \
     johnelse/docker-transmission

@@ -18,5 +18,7 @@ MINIDLNA_HOME=$HOME/media
 # transmission
 
 TRANSMISSION_PASSWORD=abc123
+TRANSMISSION_RESUME=$HOME/transmission/resume
+TRANSMISSION_TORRENTS=$HOME/transmission/torrents
 TRANSMISSION_DOWNLOADS=$HOME/transmission/downloads
 TRANSMISSION_INCOMPLETE=$HOME/transmission/incomplete
