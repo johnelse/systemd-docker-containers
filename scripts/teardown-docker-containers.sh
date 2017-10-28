@@ -12,6 +12,9 @@ fi
 
 . $CONFIG_FILE
 
+docker exec transmission-container \
+    transmission-remote --auth transmission:$TRANSMISSION_PASSWORD -t all --stop
+
 CONTAINERS="lighttpd-container-$LIGHTTPD_PORT minidlna-container transmission-container"
 
 docker stop $CONTAINERS || true
