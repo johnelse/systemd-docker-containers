@@ -2,7 +2,7 @@
 
 set -eux
 
-CONFIG_FILE=/etc/docker-containers/docker-containers.conf
+CONFIG_FILE=/usr/local/etc/docker-containers/docker-containers.conf
 
 if [ ! -f $CONFIG_FILE ]
 then
